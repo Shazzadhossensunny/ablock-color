@@ -1,0 +1,327 @@
+.kzui-design-system {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: visible;
+}
+
+.kzui-design-system__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.kzui-design-system__tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.kzui-design-system__tab {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+}
+
+.kzui-design-system__tab--active {
+  border-bottom: 2px solid #1568ed;
+  color: #1568ed;
+}
+
+.kzui-design-system__search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.kzui-search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.kzui-search-input {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 10px;
+  border: 1px solid #e0e0e0;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.kzui-search-icon {
+  position: absolute;
+  left: 10px;
+  color: grey;
+}
+
+.kzui-design-system__search {
+  flex-shrink: 0;
+}
+
+.kzui-color-list__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  padding: 10px 0;
+  font-weight: bold;
+  color: #666;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.kzui-color-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kzui-border__bottom {
+  border-bottom: 1px solid #e0e0e0;
+}
+.kzui-color-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  margin: 5px 0;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.kzui-color-item:hover {
+  background-color: #f5f5f5;
+}
+
+.kzui-color-item__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kzui-color-item__drag-handle {
+  cursor: move;
+  color: #999;
+  display: none;
+}
+
+.kzui-color-item:hover .kzui-color-item__drag-handle,
+.kzui-color-item--selected .kzui-color-item__drag-handle {
+  display: inline-flex;
+}
+
+.kzui-color-item__checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.kzui-color-item__checkbox:checked {
+  background-color: grey;
+}
+
+.kzui-color-item__color-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.kzui-value-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kzui-color-item__actions {
+  position: relative;
+}
+
+.kzui-color-item__menu-button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #666;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.kzui-color-item:hover .kzui-color-item__menu-button {
+  opacity: 1;
+}
+
+.kzui-color-item__menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.kzui-color-item__menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.kzui-color-item__menu button:hover {
+  background-color: #f5f5f5;
+}
+
+.kzui-color-item__menu button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.kzui-design-system__add-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1568ed;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.kzui-design-system__add-button:hover {
+  background-color: #1255c4;
+}
+
+.kzui-drawer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: white;
+  border-left: 1px solid #e0e0e0;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.kzui-drawer.open {
+  transform: translateX(0);
+}
+
+.kzui-drawer__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.kzui-drawer__input-group {
+  margin-bottom: 20px;
+}
+
+.kzui-drawer__label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.kzui-drawer__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.kzui-drawer__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.kzui-drawer__button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.kzui-drawer__button--cancel {
+  background-color: #f0f0f0;
+}
+
+.kzui-drawer__button--save {
+  background-color: #1568ed;
+  color: white;
+}
+
+.kzui-drawer__button--save:hover {
+  background-color: #1255c4;
+}
+
+@media (max-width: 600px) {
+  .kzui-design-system {
+    padding: 10px;
+  }
+
+  .kzui-design-system__title {
+    font-size: 20px;
+  }
+
+  .kzui-design-system__tab {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .kzui-color-item,
+  .kzui-color-list__header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .kzui-color-item__content {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+  }
+
+  .kzui-value-box {
+    justify-content: space-between;
+  }
+
+  .kzui-color-item__actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .kzui-color-item__menu-button {
+    opacity: 1;
+  }
+
+  .kzui-drawer {
+    max-width: 100%;
+  }
+}
