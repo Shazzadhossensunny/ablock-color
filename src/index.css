@@ -1,18 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
 .kzui-design-system {
-  font-family: Arial, sans-serif;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 20px;
+  text-overflow: ellipsis;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddf;
+  border-radius: 16px;
   position: relative;
   overflow: visible;
+  min-height: calc(100vh - 100px);
 }
 
 .kzui-design-system__title {
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 500;
   margin-bottom: 20px;
+  color: #0f0e16;
 }
 
 .kzui-design-system__tabs {
@@ -20,8 +32,8 @@
   justify-content: space-between;
   align-items: center;
   margin: 10px 0;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #dddddf;
+  border-bottom: 1px solid #dddddf;
 }
 
 .kzui-design-system__tab {
@@ -29,13 +41,14 @@
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 16px;
-  color: #666;
+  font-size: 14px;
+  color: #74777c;
+  font-weight: 400;
 }
 
 .kzui-design-system__tab--active {
-  border-bottom: 2px solid #1568ed;
-  color: #1568ed;
+  border-bottom: 2px solid #13191b;
+  color: #0f0e16;
 }
 
 .kzui-design-system__search-container {
@@ -56,7 +69,7 @@
   width: 100%;
   padding-left: 30px;
   padding-right: 10px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #dddddf;
   background-color: transparent;
   outline: none;
   font-size: 14px;
@@ -78,10 +91,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr auto;
   padding: 10px 0;
-  font-weight: bold;
-  color: #666;
+  font-weight: 500;
+  color: #454d54;
   align-items: center;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #dddddf;
   margin-bottom: 10px;
 }
 
@@ -92,7 +105,7 @@
 }
 
 .kzui-border__bottom {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #dddddf;
 }
 .kzui-color-item {
   display: grid;
@@ -127,26 +140,56 @@
 }
 
 .kzui-color-item__checkbox {
+  appearance: none;
   width: 16px;
   height: 16px;
   border: 1px solid grey;
   cursor: pointer;
+  position: relative;
+  background-color: white;
 }
-
 .kzui-color-item__checkbox:checked {
-  background-color: grey;
+  background-color: #13191b;
 }
 
-.kzui-color-item__color-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
+.kzui-color-item__checkbox:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 3px;
 }
 
 .kzui-value-box {
   display: flex;
   align-items: center;
   gap: 10px;
+  border: 1px solid #dddddf;
+  max-width: 50%;
+  padding: 5px;
+  border-radius: 4px;
+  position: relative;
+}
+.kzui-color-item__color-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.kzui-color-item__color-icon::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: rgb(221, 221, 223);
+  left: 30px;
+  top: 0;
+}
+.kzui-color-item__value {
+  color: #0f0e16;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .kzui-color-item__actions {
@@ -162,6 +205,9 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .kzui-color-item:hover .kzui-color-item__menu-button {
@@ -173,9 +219,8 @@
   right: 0;
   top: 100%;
   background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0px 8px 24px 0px rgba(19, 25, 27, 0.16);
   z-index: 10;
 }
 
@@ -189,6 +234,9 @@
   background: none;
   border: none;
   cursor: pointer;
+  color: #13191b;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .kzui-color-item__menu button:hover {
@@ -203,32 +251,36 @@
 .kzui-design-system__add-button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #1568ed;
-  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  color: #74777c;
+  background: none;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-}
-
-.kzui-design-system__add-button:hover {
-  background-color: #1255c4;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .kzui-drawer {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 150px;
   width: 100%;
-  max-width: 400px;
-  height: 100%;
+  max-width: 300px;
+  min-height: calc(100vh - 250px);
   background-color: white;
-  border-left: 1px solid #e0e0e0;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #dddddf;
+  border-left: 1px solid #dddddf;
+  border-bottom: 1px solid #dddddf;
+  box-shadow: -12px 0px 24px -12px rgba(19, 25, 27, 0.08);
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .kzui-drawer.open {
@@ -242,64 +294,105 @@
 
 .kzui-drawer__input-group {
   margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .kzui-drawer__label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .kzui-drawer__input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #dddddf;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.kzui-drawer__value-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.kzui-drawer__value-group span {
+  color: #13191b;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .kzui-drawer__buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  gap: 10px;
+  border-top: 1px solid #dddddf;
+  padding-top: 20px;
 }
 
 .kzui-drawer__button {
   padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  width: 50%;
 }
 
 .kzui-drawer__button--cancel {
-  background-color: #f0f0f0;
+  background: none;
+  color: #13191b;
+  border-radius: 8px;
+  border: 1px solid #dddddf;
 }
 
 .kzui-drawer__button--save {
-  background-color: #1568ed;
+  background-color: #13191b;
   color: white;
+  border-radius: 8px;
 }
 
-.kzui-drawer__button--save:hover {
-  background-color: #1255c4;
+.kzui-hidden-mobile {
+  display: none;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 769px) {
+  .kzui-hidden-mobile {
+    display: initial;
+  }
+}
+
+@media (max-width: 768px) {
   .kzui-design-system {
-    padding: 10px;
+    margin: 20px 10px;
+    padding: 15px;
   }
 
   .kzui-design-system__title {
-    font-size: 20px;
+    font-size: 24px;
   }
 
-  .kzui-design-system__tab {
-    padding: 10px;
-    font-size: 14px;
+  .kzui-design-system__tabs {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .kzui-color-item,
-  .kzui-color-list__header {
+  .kzui-design-system__search {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .kzui-search-input-wrapper {
+    width: 100%;
+    max-width: none;
+  }
+
+  .kzui-color-list__header,
+  .kzui-color-item {
     grid-template-columns: 1fr auto;
   }
 
@@ -309,7 +402,7 @@
   }
 
   .kzui-value-box {
-    justify-content: space-between;
+    max-width: 100%;
   }
 
   .kzui-color-item__actions {
@@ -322,6 +415,39 @@
   }
 
   .kzui-drawer {
-    max-width: 100%;
+    width: 100%;
+    max-width: none;
+    top: 0;
+    right: 0;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .kzui-design-system {
+    margin: 10px 5px;
+    padding: 10px;
+  }
+
+  .kzui-design-system__title {
+    font-size: 20px;
+  }
+
+  .kzui-design-system__tab {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .kzui-color-item {
+    padding: 8px;
+  }
+
+  .kzui-color-item__content {
+    flex-wrap: wrap;
+  }
+
+  .kzui-drawer__button {
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }

@@ -1,10 +1,11 @@
-import Color from "./components/Color"
+import DesignSystem from "./components/DesignSystem"
+
 function App() {
 
 
   return (
     <>
-     <Color></Color>
+    <DesignSystem></DesignSystem>
     </>
   )
 }
