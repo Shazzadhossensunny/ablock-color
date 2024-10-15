@@ -30,3 +30,10 @@ Make sure you have the following installed:
 
    npm run dev
    ```
+
+   ## Troubleshooting
+
+   If you run into issues with package installations or if any package doesn't work correctly, try the following:
+
+   Ensure you are using a compatible version of Node.js.
+   Run npm install --legacy-peer-deps to resolve any peer dependency conflicts.
